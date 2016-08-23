@@ -1,6 +1,6 @@
 // business logic
 
-function Place(place, location, landmark, year, purpose, notes) {
+function Place(place, location, landmark, year, picture, notes) {
   this.addPlace = place;
   this.addLocation = location;
   this.addLandmark = landmark;
@@ -24,10 +24,12 @@ $(document).ready(function() {
    var newLocation = $("input#new-location").val();
    var newLandmark = $("input#new-landmark").val();
    var newYear = $("input#new-year").val();
-   var newPurpose = $("input#new-purpose").val();
+   var newPicture = $("input#new-picture").val();
    var newNote = $("textarea#new-notes").val();
 
-   var newVacationPlace = new Place(newPlace, newLocation, newLandmark, newYear, newPurpose, newNote);
+   var newVacationPlace = new Place(newPlace, newLocation, newLandmark, newYear, newPicture, newNote);
+
+   $(".places-title").show();
 
    $("ul#places").append("<li><span class='show-place'>" + newVacationPlace.placeLocation() + "</span></li>");
 
@@ -35,7 +37,7 @@ $(document).ready(function() {
    $("input#new-location").val("");
    $("input#new-landmark").val("");
    $("input#new-year").val("");
-   $("input#new-purpose").val("");
+   $("input#new-picture").val("");
    $("textarea#new-notes").val("");
 
    $(".show-place").click(function() {
@@ -43,6 +45,10 @@ $(document).ready(function() {
    $("#show-place h2").text(newVacationPlace.addPlace);
    $(".place").text(newVacationPlace.addPlace);
    $(".location").text(newVacationPlace.addLocation);
+   $(".landmark").text(newVacationPlace.addLandmark);
+   $(".year").text(newVacationPlace.addYear);
+   $(".picture").append("<img src='" + newVacationPlace.addPicture + "' class= 'img-responsive' />");
+   $(".notes").text(newVacationPlace.addNotes);
    });
 
   });
