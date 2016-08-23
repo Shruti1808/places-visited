@@ -1,0 +1,36 @@
+body {
+  margin-top: 30px;
+  background-color: #EBEBEB;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
+  color: #E56399;
+}
+
+#input-data, h2 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+}
+
+.page-header {
+  border-bottom: 1px solid #FDFFF7;
+}
+
+#show-place {
+  display: none;
+}
+
+.show-place {
+  cursor: pointer;
+  color: #25CED1;
+}
+
+.show-place:hover {
+  text-decoration: underline;
+}
+
+#show-place h2, .title {
+  color: #25CED1;
+}
